@@ -1,0 +1,38 @@
+name: Update Packages JSON
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Generate packages.json
+      run: |
+        echo '{ "packages": [' > packages.json
+        first=true
+        for file in *.py; do
+          if [ "$first" = true ]; then
+            first=false
+          else
+            echo ',' >> packages.json
+          fi
+          echo -n "\"$file\"" >> packages.json
+        done
+        echo '] }' >> packages.json
+
+    - name: Commit and push
+      run: |
+        git config user.name "github-actions"
+        git config user.email "actions@github.com"
+        git add packages.json
+        git commit -m "update packages.json" || echo "no changes"
+        git push
