@@ -20,7 +20,7 @@ def cmd(args, path=None, gold=None):
         token = "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"  # depois tu pode melhorar isso
 
         g = Github(token)
-        repo = g.get_repo("ingitp/goldosx-pkg.github.io")
+        repo = g.get_repo("InGitP/goldosx-pkg.github.io")
 
         with open(file, "r", encoding="utf-8") as f:
             content = f.read()
