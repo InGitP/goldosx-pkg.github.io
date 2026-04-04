@@ -1,3 +1,4 @@
 { "packages": [
 "gpd.py",
-"onlinepkg.py"] }
+"onlinepkg.py",
+"psound.py"] }
