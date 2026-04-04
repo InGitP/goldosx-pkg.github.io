@@ -17,7 +17,7 @@ def cmd(args, path=None, gold=None):
             print("só pode enviar .py")
             return
 
-        token = "SEU_TOKEN_AQUI"  # depois tu pode melhorar isso
+        token = "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"  # depois tu pode melhorar isso
 
         g = Github(token)
         repo = g.get_repo("ingitp/goldosx-pkg.github.io")
