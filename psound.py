@@ -6,8 +6,9 @@ def cmd(args,path):
     import Tools
     
     a = True
+    filb = input("Defualt file>")
     while a:
-        filb = input("Defualt file>")
+        
         d = Tools.player3(filb)
         
         playtext(filb)
@@ -29,4 +30,4 @@ def cmd(args,path):
             d.unpause()
         elif c[0] == "change":
             d.change(c[1])
-        playtext(filb)
+        
