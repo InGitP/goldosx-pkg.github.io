@@ -1,4 +1,6 @@
 import sys
+
+import Tools.util
 def playtext(file):
     print(f"now playing: {file}")
 def cmd(args,path):
@@ -6,10 +8,14 @@ def cmd(args,path):
     import Tools
     
     a = True
-    filb = input("Defualt file>")
+    if Tools.util.array.lencheck(args,3):
+        filb = args[2]
+    else:
+        flib = input("Audio name>")
+    d = Tools.player3(filb)
     while a:
         
-        d = Tools.player3(filb)
+        
         
         playtext(filb)
         b = input("psound>")
