@@ -6,7 +6,7 @@ def playtext(file):
 def cmd(args,path):
     sys.path.append(path.rootpath(patha="bin/Tools"))
     import Tools
-    
+    flib
     a = True
     try:
 
