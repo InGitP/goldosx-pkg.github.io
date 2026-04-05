@@ -8,9 +8,12 @@ def cmd(args,path):
     import Tools
     
     a = True
-    if Tools.util.array.lencheck(args,3):
-        filb = args[2]
-    else:
+    try:
+
+        if Tools.util.array.lencheck(args,3):
+            filb = args[2]
+    except Exception:
+
         flib = input("Audio name>")
     d = Tools.player3(filb)
     while a:
